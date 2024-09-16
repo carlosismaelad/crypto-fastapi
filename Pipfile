@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
+
+[scripts]
+services-up = "docker compose -f compose.yaml up -d"
+services-stop = "docker compose -f compose.yaml stop"
+services-down = "docker compose -f compose.yaml down"
+dev = "uvicorn main:app --reload"
