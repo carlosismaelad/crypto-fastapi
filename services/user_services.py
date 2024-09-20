@@ -3,7 +3,8 @@ from database.connection import async_session
 
 class UserServices:
 
-    async def create_user():
+    @staticmethod
+    async def create_user(name: str):
         async with async_session() as session:
             session.add(User(name=name))
             await session.commit()
